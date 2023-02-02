@@ -1,14 +1,28 @@
 /* eslint-disable import/namespace */
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import { View, ActivityIndicator } from 'react-native';
 
+import { Categories } from './screens';
 import { styles } from './styles';
 
 const App = () => {
+  const [loaded] = useFonts({
+    'Rubik-Black': require('../assets/fonts/Rubik-Black.ttf'),
+    'Rubik-Bold': require('../assets/fonts/Rubik-Bold.ttf'),
+    'Rubik-Medium': require('../assets/fonts/Rubik-Medium.ttf'),
+  });
+
+  if (!loaded) {
+    return (
+      <View style={styles.container}>
+        <ActivityIndicator size="large" color="#0000ff" />
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Categories />
     </View>
   );
 };
