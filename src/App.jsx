@@ -2,7 +2,7 @@
 import { useFonts } from 'expo-font';
 import { View, ActivityIndicator } from 'react-native';
 
-import { Categories } from './screens';
+import AppNavigator from './navigation';
 import { styles } from './styles';
 
 const App = () => {
@@ -20,11 +20,7 @@ const App = () => {
     );
   }
 
-  return (
-    <View style={styles.container}>
-      <Categories />
-    </View>
-  );
+  return <AppNavigator />;
 };
 
 export default App;
