@@ -8,4 +8,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     fontFamily: 'Rubik-Bold',
   },
+  title: {
+    fontFamily: 'Rubik-Bold',
+    fontSize: 16,
+  },
 });

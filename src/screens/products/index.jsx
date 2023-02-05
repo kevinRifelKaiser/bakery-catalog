@@ -5,7 +5,7 @@ import { styles } from './styles';
 const Products = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text>Products Screen</Text>
+      <Text style={styles.title}>Products Screen</Text>
       <Button title="See in detail" onPress={() => navigation.navigate('ProductDetail')} />
     </View>
   );
