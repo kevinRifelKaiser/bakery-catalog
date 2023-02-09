@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   contentContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 5,
+    borderRadius: 10,
     height: 150,
     width: 350,
     marginVertical: 15,

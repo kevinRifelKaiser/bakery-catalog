@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   contentContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 5,
+    borderRadius: 10,
     height: 100,
     width: 350,
     marginBottom: 20,
@@ -33,5 +33,8 @@ export const styles = StyleSheet.create({
   },
   dataContainer: {
     flexDirection: 'row',
+    marginTop: 20,
+    width: '75%',
+    justifyContent: 'space-between',
   },
 });

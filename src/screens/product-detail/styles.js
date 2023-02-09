@@ -10,6 +10,12 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'Rubik-Bold',
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  description: {
+    fontFamily: 'Rubik-Medium',
     fontSize: 16,
+    marginVertical: 10,
   },
 });

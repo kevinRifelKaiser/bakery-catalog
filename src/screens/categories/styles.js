@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     fontFamily: 'Rubik-Bold',
-    marginTop: StatusBar.currentHeight,
+    marginTop: StatusBar.currentHeight + 5,
   },
   title: {
     fontFamily: 'Rubik-Bold',

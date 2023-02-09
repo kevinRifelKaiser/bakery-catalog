@@ -9,10 +9,9 @@ const ProductItem = ({ item, onSelected, color }) => {
         style={{ ...styles.contentContainer, backgroundColor: color }}
         onPress={() => onSelected(item)}>
         <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.description}>{item.description}</Text>
         <View style={styles.dataContainer}>
-          <Text style={styles.description}>{item.weight} x</Text>
-          <Text style={styles.description}> $ {item.price}</Text>
+          <Text style={styles.description}>$ {item.price}</Text>
+          <Text style={styles.description}>x {item.weight}</Text>
         </View>
       </TouchableOpacity>
     </View>
