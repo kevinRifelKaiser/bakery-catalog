@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
 
 import { THEME } from '../../constants/theme';
 
@@ -9,9 +9,10 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     fontFamily: 'Rubik-Bold',
+    marginTop: StatusBar.currentHeight,
   },
   title: {
-    fontFamily: 'Rubik-Medium',
+    fontFamily: 'Rubik-Bold',
     fontSize: 20,
     marginVertical: 20,
   },

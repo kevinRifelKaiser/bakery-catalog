@@ -9,6 +9,7 @@ const Categories = ({ navigation }) => {
     navigation.navigate('Products', {
       title: item.title,
       categoryId: item.id,
+      categoryColor: item.color,
     });
   };
   const renderItem = ({ item }) => <CategoryItem item={item} onSelected={onSelected} />;

@@ -19,7 +19,7 @@ const ShopNavigator = () => {
           backgroundColor: THEME.colors.primary,
         },
       }}>
-      <Stack.Screen name="Categories" component={Categories} options={{ title: 'Categories' }} />
+      <Stack.Screen name="Categories" component={Categories} options={{ headerShown: false }} />
       <Stack.Screen
         name="ProductDetail"
         component={ProductDetail}
@@ -28,7 +28,11 @@ const ShopNavigator = () => {
       <Stack.Screen
         name="Products"
         component={Products}
-        options={({ route }) => ({ title: route.params.title })}
+        options={({ route }) => ({
+          title: route.params.title,
+          categoryId: route.params.categoryId,
+          categoryColor: route.params.categoryColor,
+        })}
       />
     </Stack.Navigator>
   );

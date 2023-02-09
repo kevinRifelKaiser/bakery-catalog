@@ -10,6 +10,10 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'Rubik-Bold',
-    fontSize: 16,
+    fontSize: 20,
+    marginVertical: 20,
+  },
+  productsList: {
+    backgroundColor: '000',
   },
 });
