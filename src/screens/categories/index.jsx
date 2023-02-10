@@ -13,7 +13,7 @@ const Categories = ({ navigation }) => {
     });
   };
   const renderItem = ({ item }) => <CategoryItem item={item} onSelected={onSelected} />;
-  const keyExtractor = (item) => item.id;
+  const keyExtractor = (item) => item.id.toString();
 
   return (
     <View style={styles.container}>

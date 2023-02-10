@@ -47,20 +47,6 @@ const TabsNavigator = () => {
         }}
       />
       <BottomTab.Screen
-        name="OrdersTab"
-        component={OrdersNavigator}
-        options={{
-          title: 'Orders',
-          tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? 'file-tray' : 'file-tray-outline'}
-              size={24}
-              color={focused ? THEME.colors.primary : THEME.colors.secondary}
-            />
-          ),
-        }}
-      />
-      <BottomTab.Screen
         name="CartTab"
         component={CartNavigator}
         options={{
@@ -68,6 +54,20 @@ const TabsNavigator = () => {
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name={focused ? 'cart' : 'cart-outline'}
+              size={24}
+              color={focused ? THEME.colors.primary : THEME.colors.secondary}
+            />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="OrdersTab"
+        component={OrdersNavigator}
+        options={{
+          title: 'Orders',
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name={focused ? 'file-tray' : 'file-tray-outline'}
               size={24}
               color={focused ? THEME.colors.primary : THEME.colors.secondary}
             />

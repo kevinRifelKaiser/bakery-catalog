@@ -5,29 +5,25 @@ import { THEME } from '../../constants/theme';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    backgroundColor: THEME.colors.secondary,
+    width: 350,
+    borderRadius: 10,
+    padding: 15,
+    marginVertical: 10,
   },
   title: {
     fontFamily: 'Rubik-Bold',
-    fontSize: 18,
-    marginVertical: 15,
+    fontSize: 16,
+    marginBottom: 5,
   },
-  subtotal: {
-    position: 'absolute',
-    bottom: 72,
-    backgroundColor: THEME.colors.primary,
-    right: 50,
-    left: 50,
+  dataContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 15,
-    borderRadius: 10,
-    height: 55,
   },
-  subtotalText: {
+  description: {
     fontFamily: 'Rubik-Medium',
-    fontSize: 16,
-    color: THEME.colors.white,
+    fontSize: 13,
+    marginVertical: 1,
   },
 });
