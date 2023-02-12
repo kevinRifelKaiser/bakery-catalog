@@ -1,10 +1,12 @@
 import { View, Text, FlatList } from 'react-native';
+import { useSelector } from 'react-redux';
 
 import { styles } from './styles';
 import { CategoryItem } from '../../components';
-import { CATEGORIES } from '../../constants/data/index';
 
 const Categories = ({ navigation }) => {
+  const categories = useSelector((state) => state.category.categories);
+
   const onSelected = (item) => {
     navigation.navigate('Products', {
       title: item.title,
@@ -18,7 +20,7 @@ const Categories = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Categories</Text>
-      <FlatList data={CATEGORIES} renderItem={renderItem} keyExtractor={keyExtractor} />
+      <FlatList data={categories} renderItem={renderItem} keyExtractor={keyExtractor} />
     </View>
   );
 };
