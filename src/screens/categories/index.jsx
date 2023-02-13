@@ -1,17 +1,18 @@
 import { View, Text, FlatList } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { styles } from './styles';
 import { CategoryItem } from '../../components';
+import { selectCategory } from '../../store/actions/index';
 
 const Categories = ({ navigation }) => {
   const categories = useSelector((state) => state.category.categories);
+  const dispatch = useDispatch();
 
   const onSelected = (item) => {
+    dispatch(selectCategory(item.id));
     navigation.navigate('Products', {
       title: item.title,
-      categoryId: item.id,
-      categoryColor: item.color,
     });
   };
   const renderItem = ({ item }) => <CategoryItem item={item} onSelected={onSelected} />;

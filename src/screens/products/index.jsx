@@ -1,20 +1,29 @@
+import { useEffect } from 'react';
 import { View, Text, FlatList } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { styles } from './styles';
 import { ProductItem } from '../../components';
-import { PRODUCTS } from '../../constants/data/index';
+import { selectProduct, filterProducts } from '../../store/actions/index';
 
-const Products = ({ navigation, route }) => {
-  const { categoryId, categoryColor } = route.params;
+const Products = ({ navigation }) => {
+  const dispatch = useDispatch();
 
-  const filteredProducts = PRODUCTS.filter((product) => product.categoryId === categoryId);
+  const selectedCategory = useSelector((state) => state.category.selected);
+  const filteredProducts = useSelector((state) => state.products.filteredProducts);
+
   const onSelected = (item) => {
+    dispatch(selectProduct(item.id));
     navigation.navigate('ProductDetail', { productId: item.id, title: item.title });
   };
   const renderItem = ({ item }) => (
-    <ProductItem item={item} onSelected={onSelected} color={categoryColor} />
+    <ProductItem item={item} onSelected={onSelected} color={selectedCategory.color} />
   );
   const keyExtractor = (item) => item.id;
+
+  useEffect(() => {
+    dispatch(filterProducts(selectedCategory.id));
+  }, []);
 
   return (
     <View style={styles.container}>
