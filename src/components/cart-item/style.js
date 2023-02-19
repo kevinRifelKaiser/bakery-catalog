@@ -5,6 +5,9 @@ import { THEME } from '../../constants/theme';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     backgroundColor: THEME.colors.secondary,
     width: 350,
     borderRadius: 10,
@@ -17,9 +20,8 @@ export const styles = StyleSheet.create({
     marginBottom: 5,
   },
   dataContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
   },
   description: {
     fontFamily: 'Rubik-Medium',

@@ -30,4 +30,11 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: THEME.colors.white,
   },
+  header: {
+    flex: 1,
+  },
+  headerText: {
+    fontFamily: 'Rubik-Medium',
+    fontSize: 16,
+  },
 });
