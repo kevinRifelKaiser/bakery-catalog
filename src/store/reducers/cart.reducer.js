@@ -27,6 +27,23 @@ const cartReducer = (state = initialState, actions) => {
         total: sumTotal(updatedCart),
       };
     }
+    case REMOVE_FROM_CART: {
+      let updatedCart = [];
+      const getItem = state.items.find((item) => item.id === actions.id);
+      if (getItem.quantity === 1) {
+        updatedCart = state.items.filter((item) => item.id !== actions.id);
+      } else {
+        updatedCart = state.items.map((item) => {
+          if (item.quantity > 1) item.quantity -= 1;
+          return item;
+        });
+      }
+      return {
+        ...state,
+        items: updatedCart,
+        total: sumTotal(updatedCart),
+      };
+    }
     default:
       return state;
   }
