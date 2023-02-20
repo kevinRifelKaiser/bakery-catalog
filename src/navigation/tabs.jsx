@@ -1,15 +1,25 @@
+import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import CartNavigator from './cart';
 import OrdersNavigator from './orders';
 import ShopNavigator from './shop';
 import { THEME } from '../constants/theme';
-
-import { Ionicons } from '@expo/vector-icons';
+import { countItems } from '../utils';
 
 const BottomTab = createBottomTabNavigator();
 
 const TabsNavigator = () => {
+  const items = useSelector((state) => state.cart.items);
+
+  const [amountOfItems, setAmountOfItems] = useState(0);
+
+  useEffect(() => {
+    setAmountOfItems(countItems(items));
+  }, [items]);
+
   return (
     <BottomTab.Navigator
       initialRouteName="ShopTab"
@@ -58,6 +68,11 @@ const TabsNavigator = () => {
               color={focused ? THEME.colors.primary : THEME.colors.secondary}
             />
           ),
+          tabBarBadge: items.length > 0 ? amountOfItems : null,
+          tabBarBadgeStyle: {
+            backgroundColor: THEME.colors.red,
+            color: THEME.colors.white,
+          },
         }}
       />
       <BottomTab.Screen

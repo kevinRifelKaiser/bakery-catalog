@@ -6,5 +6,6 @@ export const THEME = {
     black: '#000',
     white: '#fff',
     text: '#252525',
+    red: '#e63946',
   },
 };
