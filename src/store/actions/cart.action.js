@@ -34,9 +34,7 @@ export const confirmOrder = (items, total) => {
         type: CONFIRM_ORDER,
         result,
       });
-      console.warn(result);
     } catch (error) {
-      console.warn(error);
       dispatch({
         type: CONFIRM_ORDER,
         error,

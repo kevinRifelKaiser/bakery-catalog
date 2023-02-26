@@ -1,7 +1,7 @@
 import { sumTotal } from '../../utils';
 import { cartTypes } from '../types/cart.types';
 
-const { ADD_TO_CART, CONFIRM_ORDER, REMOVE_FROM_CART } = cartTypes;
+const { ADD_TO_CART, REMOVE_FROM_CART } = cartTypes;
 
 const initialState = {
   items: [],
